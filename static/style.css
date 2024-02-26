@@ -1,0 +1,94 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+input[type="text"], button, .results {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input[type="text"] {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+input[type="text"]:focus {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.results {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: none; /* Initially hide the results */
+    text-align: left;
+    word-wrap: break-word;
+}
+
+/* Animations and transitions */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.results.show {
+    display: block; /* Show results with animation */
+    animation: slideIn 0.5s ease-out;
+}
+#nameOutput {
+    margin-top: 20px; /* Add some space above the output area */
+    background-color: #f7f9fc; /* A light background color for contrast */
+    color: #333; /* Darker text color for readability */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    padding: 15px 20px; /* Padding inside the output area */
+    border: 1px solid #d1d8e0; /* A subtle border to define the area */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* A light shadow for depth */
+    font-size: 18px; /* Slightly larger font size for emphasis */
+    line-height: 1.6; /* Increase line height for better readability */
+    word-wrap: break-word; /* Ensure long names wrap and stay within the container */
+    text-align: center; /* Center-align the text */
+    max-width: 500px; /* Maximum width to maintain readability */
+    margin-left: auto; /* Center the div horizontally */
+    margin-right: auto; /* Center the div horizontally */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#nameOutput:hover {
+    transform: translateY(-5px); /* Slightly raise the div on hover for an interactive feel */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Increase shadow for a "lifted" effect on hover */
+}
